@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Timeline from './components/Temline';
 
-function App() {
+const App = () => {
+  const [tweets, setTweets] = useState([]);
+
+  useEffect(() => {
+    const fetchTweets = async () => {
+      try {
+        const response = await axios.get(
+          'https://www.mocky.io/v2/5d1ef97d310000552febe99d'
+        );
+        setTweets(response.data);
+      } catch (error) {
+        console.error('Error fetching tweets:', error);
+      }
+    };
+
+    fetchTweets();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Timeline tweets={tweets} />
     </div>
   );
-}
+};
 
 export default App;

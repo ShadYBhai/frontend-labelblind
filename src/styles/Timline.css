@@ -1,0 +1,158 @@
+.timeline {
+  background-image: url("../assets/background.png");
+  background-size: 100vh;
+  height: 100vh;
+  height: auto;
+  background-color: #f6f8fa;
+  padding: 20px;
+}
+
+.date-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.date-filter-input {
+  margin: 0 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.tweet {
+  position: relative;
+  width: 500px;
+  height: 270px;
+  background: linear-gradient(135deg, #111133 0%, #222255 50%, #333377 100%);
+  border: 1px solid #a7a7a7;
+  border-radius: 50% 50% 50% 0%;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* .tweet:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 140px 0 0;
+  border-color: #a7a7a7 transparent transparent transparent;
+  transform: rotate(-10deg);
+} */
+
+/* .tweet:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 140px 0 0;
+  border-color: #111133 transparent transparent transparent;
+  transform: rotate(-10deg);
+} */
+
+.tweet-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+  font-family: Manrope;
+  color: aliceblue;
+}
+
+.author-icon {
+  margin-right: 5px;
+}
+
+.tweet-author {
+  font-weight: bold;
+  color: #fff;
+}
+
+.tweet-text {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #ddd;
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.tweet-date {
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.tweet-likes {
+  display: flex;
+  align-items: center;
+}
+
+.like-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  color: #999;
+  transition: color 0.3s ease-in-out;
+}
+
+.like-button:hover {
+  color: #e0245e;
+}
+
+.like-button.liked {
+  color: #e0245e;
+}
+
+.tweet-link {
+  color: #1da1f2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.no-tweets {
+  text-align: center;
+  color: #ccc;
+}
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .tweet {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+  }
+
+  .tweet:before,
+  .tweet:after {
+    border-width: 10px 90px 0 0;
+  }
+}
